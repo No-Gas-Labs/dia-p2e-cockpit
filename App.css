@@ -1,0 +1,211 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+}
+
+.App-header {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.App-header h1 {
+  margin: 0 0 20px 0;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(45deg, #ffd700, #ffed4e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stats-panel {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.stat-value.active {
+  color: #00ff00;
+}
+
+.stat-value.inactive {
+  color: #ff6b6b;
+}
+
+.reset-btn {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(238, 90, 36, 0.3);
+}
+
+.reset-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(238, 90, 36, 0.4);
+}
+
+.game-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#phaser-game-container {
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.blessings-log {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.blessings-log h3 {
+  margin: 0 0 15px 0;
+  color: #ffd700;
+  font-size: 1.2rem;
+}
+
+.blessings-list {
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.blessing-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 12px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.blessing-item span:first-child {
+  color: #00ff00;
+}
+
+.blessing-item span:nth-child(2) {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.blessing-item span:last-child {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+}
+
+.no-blessings {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 2rem;
+  }
+  
+  .stats-panel {
+    gap: 15px;
+  }
+  
+  .stat-item {
+    padding: 8px 15px;
+  }
+  
+  #phaser-game-container {
+    height: 400px;
+  }
+  
+  .blessings-log {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .stats-panel {
+    gap: 10px;
+  }
+  
+  .stat-item {
+    padding: 6px 10px;
+  }
+  
+  .stat-value {
+    font-size: 1.2rem;
+  }
+  
+  #phaser-game-container {
+    height: 300px;
+  }
+}
+
+/* Scrollbar Styling */
+.blessings-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.blessings-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.blessings-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.blessings-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
