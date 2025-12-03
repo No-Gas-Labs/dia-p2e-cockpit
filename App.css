@@ -146,48 +146,299 @@
   font-style: italic;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Enhanced Responsive Design */
+@media (max-width: 1200px) {
+  .stats-panel {
+    gap: 20px;
+  }
+  
+  .stat-item {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 992px) {
   .App-header h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   
   .stats-panel {
     gap: 15px;
+    flex-wrap: wrap;
   }
   
   .stat-item {
     padding: 8px 15px;
+    min-width: 120px;
+  }
+  
+  #phaser-game-container {
+    height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .App-header {
+    padding: 15px;
+  }
+  
+  .App-header h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .stats-panel {
+    gap: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .stat-item {
+    padding: 8px 15px;
+    min-width: 100px;
+  }
+  
+  .stat-value {
+    font-size: 1.3rem;
+  }
+  
+  .reset-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
   
   #phaser-game-container {
     height: 400px;
+    margin: 15px;
+  }
+  
+  .game-container {
+    padding: 10px;
   }
   
   .blessings-log {
     padding: 15px;
   }
+  
+  .blessings-log h3 {
+    font-size: 1.1rem;
+  }
+  
+  .blessing-item {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+  }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+  .App-header {
+    padding: 12px;
+  }
+  
   .App-header h1 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
   }
   
   .stats-panel {
     gap: 10px;
+    margin-bottom: 12px;
   }
   
   .stat-item {
     padding: 6px 10px;
+    min-width: 80px;
   }
   
   .stat-value {
     font-size: 1.2rem;
   }
   
+  .stat-label {
+    font-size: 0.8rem;
+  }
+  
+  .reset-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+  
+  #phaser-game-container {
+    height: 350px;
+    margin: 10px;
+  }
+  
+  .blessings-log {
+    padding: 12px;
+  }
+  
+  .blessings-log h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App-header {
+    padding: 10px;
+  }
+  
+  .App-header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .stats-panel {
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .stat-item {
+    padding: 5px 8px;
+    min-width: 70px;
+  }
+  
+  .stat-value {
+    font-size: 1.1rem;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+  }
+  
+  .reset-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
   #phaser-game-container {
     height: 300px;
+    margin: 8px;
+  }
+  
+  .blessings-log {
+    padding: 10px;
+  }
+  
+  .blessings-log h3 {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+  
+  .blessing-item {
+    padding: 5px 8px;
+    font-size: 0.8rem;
+  }
+  
+  .no-blessings {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .App-header h1 {
+    font-size: 1.3rem;
+  }
+  
+  .stats-panel {
+    gap: 6px;
+  }
+  
+  .stat-item {
+    padding: 4px 6px;
+    min-width: 60px;
+  }
+  
+  .stat-value {
+    font-size: 1rem;
+  }
+  
+  .stat-label {
+    font-size: 0.7rem;
+  }
+  
+  .reset-btn {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+  
+  #phaser-game-container {
+    height: 280px;
+    margin: 5px;
+  }
+}
+
+/* Touch-friendly adjustments for mobile devices */
+@media (hover: none) and (pointer: coarse) {
+  .stat-item:hover,
+  .reset-btn:hover {
+    transform: none;
+  }
+  
+  .reset-btn:active {
+    transform: scale(0.98);
+  }
+  
+  .blessing-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Landscape orientation for mobile devices */
+@media (max-height: 600px) and (orientation: landscape) {
+  .App-header {
+    padding: 8px;
+  }
+  
+  .App-header h1 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+  }
+  
+  .stats-panel {
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .stat-item {
+    padding: 4px 8px;
+  }
+  
+  .reset-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
+  #phaser-game-container {
+    height: 250px;
+    margin: 5px;
+  }
+  
+  .blessings-log {
+    padding: 8px;
+    max-height: 120px;
+  }
+  
+  .blessings-log h3 {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .App-header h1 {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  
+  .stat-value.active {
+    text-shadow: 0 0 2px rgba(0, 255, 0, 0.5);
+  }
+  
+  .stat-value.inactive {
+    text-shadow: 0 0 2px rgba(255, 107, 107, 0.5);
   }
 }
 
