@@ -1,4 +1,5 @@
 import React from 'react';
+import ProfileManager from './ProfileManager';
 import StatsPanel from './StatsPanel';
 import GameContainer from './GameContainer';
 import BlessingsLog from './BlessingsLog';
@@ -9,16 +10,21 @@ const GameDashboard = ({
   shrineBlessings, 
   gameActive, 
   onResetGame,
-  onShrineBlessing 
+  onShrineBlessing,
+  stats
 }) => {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>DIA P2E Cockpit</h1>
+        <div className="header-top">
+          <h1>DIA P2E Cockpit</h1>
+          <ProfileManager />
+        </div>
         <StatsPanel 
           xp={xp}
           shrineBlessings={shrineBlessings}
           gameActive={gameActive}
+          stats={stats}
         />
         <ResetButton onReset={onResetGame} />
       </header>

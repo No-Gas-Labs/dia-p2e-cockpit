@@ -14,8 +14,17 @@
   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
 .App-header h1 {
-  margin: 0 0 20px 0;
+  margin: 0;
   font-size: 2.5rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   background: linear-gradient(45deg, #ffd700, #ffed4e);
@@ -274,9 +283,36 @@
     padding: 12px;
   }
   
+  .header-top {
+    margin-bottom: 12px;
+    gap: 15px;
+  }
+  
   .App-header h1 {
     font-size: 1.8rem;
     margin-bottom: 12px;
+  }
+  
+  .profile-picture-container {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .profile-icon {
+    font-size: 20px;
+  }
+  
+  .upload-text {
+    font-size: 7px;
+  }
+  
+  .username-display,
+  .username-input {
+    font-size: 1rem;
+  }
+  
+  .profile-manager {
+    gap: 12px;
   }
   
   .stats-panel {
@@ -429,9 +465,32 @@
     padding: 8px;
   }
   
+  .header-top {
+    margin-bottom: 8px;
+    gap: 15px;
+  }
+  
   .App-header h1 {
     font-size: 1.6rem;
     margin-bottom: 8px;
+  }
+  
+  .profile-picture-container {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .profile-icon {
+    font-size: 20px;
+  }
+  
+  .upload-text {
+    font-size: 7px;
+  }
+  
+  .username-display,
+  .username-input {
+    font-size: 1rem;
   }
   
   .stats-panel {
@@ -462,6 +521,158 @@
     font-size: 0.9rem;
     margin-bottom: 5px;
   }
+}
+
+/* Profile Manager Styles */
+.profile-manager {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-picture-container {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.profile-picture-container:hover {
+  transform: scale(1.05);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.profile-picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile-picture-placeholder {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.profile-picture-placeholder:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.profile-icon {
+  font-size: 24px;
+  margin-bottom: 2px;
+}
+
+.upload-text {
+  font-size: 8px;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.profile-edit-overlay {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  backdrop-filter: blur(5px);
+}
+
+.edit-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: background 0.3s ease;
+}
+
+.edit-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.change-btn:hover {
+  background: rgba(0, 123, 255, 0.5);
+}
+
+.remove-btn:hover {
+  background: rgba(255, 0, 0, 0.5);
+}
+
+.close-btn:hover {
+  background: rgba(128, 128, 128, 0.5);
+}
+
+.username-section {
+  display: flex;
+  align-items: center;
+}
+
+.username-display {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #ffd700;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.username-display:hover {
+  color: #ffed4e;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.username-input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.username-input:focus {
+  border-color: #ffd700;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.username-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* High DPI displays */
