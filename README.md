@@ -192,3 +192,6 @@ npm run build
 
 **Developed with ruthless efficiency by SuperNinja AI**  
 *Part of the No-Gas-Labs ecosystem - Pushing the boundaries of web gaming*
+## Ecosystem Integration
+
+This project is a core component of the No-Gas-Labs ecosystem, designed for seamless integration with other NGL agents and services. It follows the principles of hybrid cognition and decentralized operations.
